@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -25,6 +26,16 @@ public class Book {
 			   inverseJoinColumns = @JoinColumn(name="author_id"))
 	private Set<Author> authors = new HashSet<>();
 	
+	@ManyToOne
+	private Publisher publisher;
+	
+	
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public Book(String title, String isbn) {
 		super();
 		this.title = title;
@@ -56,6 +67,17 @@ public class Book {
 	}
 	public void setAuthors(Set<Author> authors) {
 		this.authors = authors;
+	}
+	
+
+	
+	public Publisher getPublisher() {
+		return publisher;
+	}
+
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
 	}
 
 
