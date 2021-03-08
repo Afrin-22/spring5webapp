@@ -24,7 +24,6 @@ public class Author {
 	
 	public Author() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
